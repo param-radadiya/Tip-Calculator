@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="horizontal">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:layout_marginTop="20dp"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp">
+
+           <EditText
+               android:id="@+id/cost_of_service"
+               android:layout_width="200dp"
+               android:layout_height="wrap_content"
+               android:hint="Cost Of Service"
+               android:inputType="numberDecimal"/>
+
+           <TextView
+               android:id="@+id/service_question"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="How was the service?"
+               android:textSize="20sp"
+               android:layout_marginTop="10dp"
+               />
+
+           <RadioGroup
+               android:id="@+id/tip_options"
+               android:checkedButton="@id/option_twenty_percent"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"
+               android:layout_marginTop="10dp"
+               tools:ignore="ExtraText">
+
+               <RadioButton
+                   android:id="@+id/option_twenty_percent"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:text="Amazing (20%)"
+                   android:textSize="18sp"
+                   />
+
+               <RadioButton
+                   android:id="@+id/option_eighteen_percent"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:text="Good (18%)"
+                   android:textSize="18sp"
+                   />
+
+               <RadioButton
+                   android:id="@+id/option_fifteen_percent"
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:text="OK (15%)"
+                   android:textSize="18sp"
+                   />
+
+               <Switch
+                   android:id="@+id/round_up_switch"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:checked="true"
+                   android:text="Round up tip?"
+                   android:textSize="18sp"
+                   android:layout_marginTop="10dp"
+                   android:layout_marginLeft="10dp"
+                   android:layout_marginRight="20dp"/>
+
+               <Button
+                   android:id="@+id/calculate_button"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:text="CALCULATE"
+                   android:layout_marginTop="10dp"
+                   />
+
+               <TextView
+                   android:id="@+id/tip_result"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   tools:text="Tip Amount: $10"
+                   android:gravity="center"
+                   android:layout_marginTop="20dp"
+                   android:textSize="22sp"/>
+
+           </RadioGroup>
+       </LinearLayout>
+
+   </ScrollView>
+
+
+
+</LinearLayout>
