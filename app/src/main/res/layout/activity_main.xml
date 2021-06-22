@@ -6,101 +6,148 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="horizontal">
+      <ScrollView
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
 
-   <ScrollView
-       android:layout_width="match_parent"
-       android:layout_height="match_parent">
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
 
-       <LinearLayout
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="vertical"
-           android:layout_marginTop="20dp"
-           android:layout_marginLeft="10dp"
-           android:layout_marginRight="10dp">
+              <LinearLayout
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_marginTop="40dp"
+                  android:layout_marginLeft="10dp">
 
-           <EditText
-               android:id="@+id/cost_of_service"
-               android:layout_width="200dp"
-               android:layout_height="wrap_content"
-               android:hint="Cost Of Service"
-               android:inputType="numberDecimal"/>
+                  <ImageView
+                      android:id="@+id/icon_cost_of_service1"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:importantForAccessibility="no"
+                      android:src="@drawable/ic_baseline_receipt_long_24"/>
 
-           <TextView
-               android:id="@+id/service_question"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:text="How was the service?"
-               android:textSize="20sp"
-               android:layout_marginTop="10dp"
-               />
+                  <ImageView
+                      android:id="@+id/icon_baseline_room_service"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:importantForAccessibility="no"
+                      android:src="@drawable/ic_baseline_room_service_24"
+                      android:layout_marginTop="40dp"/>
 
-           <RadioGroup
-               android:id="@+id/tip_options"
-               android:checkedButton="@id/option_twenty_percent"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:orientation="vertical"
-               android:layout_marginTop="10dp"
-               tools:ignore="ExtraText">
+                  <ImageView
+                      android:id="@+id/icon_baseline_north_east"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:importantForAccessibility="no"
+                      android:src="@drawable/ic_baseline_north_east_24"
+                      android:layout_marginTop="186dp"/>
+              </LinearLayout>
 
-               <RadioButton
-                   android:id="@+id/option_twenty_percent"
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:text="Amazing (20%)"
-                   android:textSize="18sp"
-                   />
 
-               <RadioButton
-                   android:id="@+id/option_eighteen_percent"
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:text="Good (18%)"
-                   android:textSize="18sp"
-                   />
-
-               <RadioButton
-                   android:id="@+id/option_fifteen_percent"
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:text="OK (15%)"
-                   android:textSize="18sp"
-                   />
-
-               <Switch
-                   android:id="@+id/round_up_switch"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:checked="true"
-                   android:text="Round up tip?"
-                   android:textSize="18sp"
-                   android:layout_marginTop="10dp"
-                   android:layout_marginLeft="10dp"
-                   android:layout_marginRight="20dp"/>
-
-               <Button
-                   android:id="@+id/calculate_button"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   android:text="CALCULATE"
-                   android:layout_marginTop="10dp"
-                   />
-
-               <TextView
-                   android:id="@+id/tip_result"
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content"
-                   tools:text="Tip Amount: $10"
-                   android:gravity="center"
-                   android:layout_marginTop="20dp"
-                   android:textSize="22sp"/>
-
-           </RadioGroup>
-       </LinearLayout>
-
-   </ScrollView>
+              <LinearLayout
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical"
+                  android:layout_marginTop="20dp"
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginRight="10dp">
 
 
 
+                  <com.google.android.material.textfield.TextInputLayout
+                      android:id="@+id/cost_of_service"
+                      android:layout_width="250dp"
+                      android:layout_height="wrap_content"
+                      android:hint="@string/cost_of_service"
+                      app:layout_constraintStart_toStartOf="parent"
+                      app:layout_constraintTop_toTopOf="parent">
+
+                      <com.google.android.material.textfield.TextInputEditText
+                          android:id="@+id/cost_of_service_edit_text"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:inputType="numberDecimal" />
+
+                  </com.google.android.material.textfield.TextInputLayout>
+
+                  <TextView
+                      android:id="@+id/service_question"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      style="@style/Widget.TipTime.TextView"
+                      android:text="How was the service?"
+                      android:textSize="20sp"
+                      android:layout_marginTop="10dp"
+                      />
+
+                  <RadioGroup
+                      android:id="@+id/tip_options"
+                      android:checkedButton="@id/option_twenty_percent"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:orientation="vertical"
+                      android:layout_marginTop="10dp"
+                      tools:ignore="ExtraText">
+
+                      <RadioButton
+                          android:id="@+id/option_twenty_percent"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:text="Amazing (20%)"
+                          android:textSize="18sp"
+                          />
+
+                      <RadioButton
+                          android:id="@+id/option_eighteen_percent"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:text="Good (18%)"
+                          android:textSize="18sp"
+                          />
+
+                      <RadioButton
+                          android:id="@+id/option_fifteen_percent"
+                          android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:text="OK (15%)"
+                          android:textSize="18sp"
+                          />
+
+                  </RadioGroup>
+                  <com.google.android.material.switchmaterial.SwitchMaterial
+                      android:id="@+id/round_up_switch"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:checked="true"
+                      android:text="Round up tip?"
+                      android:textSize="18sp"
+                      android:layout_marginTop="10dp"
+                      android:layout_marginRight="20dp"/>
+
+                  <Button
+                      android:id="@+id/calculate_button"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      android:text="CALCULATE"
+                      android:layout_marginTop="10dp"
+                      />
+
+                  <TextView
+                      android:id="@+id/tip_result"
+                      android:layout_width="match_parent"
+                      android:layout_height="wrap_content"
+                      tools:text="Tip Amount: $10"
+                      android:gravity="center"
+                      android:layout_marginTop="20dp"
+                      android:textSize="22sp"/>
+
+              </LinearLayout>
+
+
+
+          </LinearLayout>
+
+      </ScrollView>
 </LinearLayout>
